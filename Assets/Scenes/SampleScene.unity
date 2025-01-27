@@ -73694,6 +73694,7 @@ GameObject:
   - component: {fileID: 1429063447}
   - component: {fileID: 1429063446}
   - component: {fileID: 1429063448}
+  - component: {fileID: 1429063449}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -73831,6 +73832,18 @@ PolygonCollider2D:
       - {x: 1.8541796, y: 0.57362735}
       - {x: 1.2062654, y: 1.158459}
   m_UseDelaunayMesh: 0
+--- !u!114 &1429063449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429063445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b535ad54ecd49b9a84b5f5ac5bcaa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1499226425
 GameObject:
   m_ObjectHideFlags: 0

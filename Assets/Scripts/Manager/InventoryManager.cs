@@ -32,7 +32,7 @@ public class InventoryManager : MonoBehaviour
     //     toolbarData = Resources.Load<InventoryData>("Data/Toolbar");
     //     foreach (SlotData slotData in backpack.slotList)
     //     {
-    //         Debug.Log($"±³°ü²ÛÎ»£ºItemType={slotData?.item?.type ?? ItemType.None}, SubType={slotData?.item?.subType ?? SubType.None}");
+    //         Debug.Log($"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ItemType={slotData?.item?.type ?? ItemType.None}, SubType={slotData?.item?.subType ?? SubType.None}");
     //     }
     // }
 
@@ -41,7 +41,7 @@ public class InventoryManager : MonoBehaviour
         ItemData[] itemDataArray = Resources.LoadAll<ItemData>("Data");
         foreach (ItemData data in itemDataArray)
         {
-            var key = (data.type, data.subType); // Ê¹ÓÃ ItemType ºÍ SubType ×éºÏ×÷Îª¼ü
+            var key = (data.type, data.subType); // Ê¹ï¿½ï¿½ ItemType ï¿½ï¿½ SubType ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½
             if (!itemDataDict.ContainsKey(key))
             {
                 itemDataDict.Add(key, data);
@@ -57,8 +57,30 @@ public class InventoryManager : MonoBehaviour
         toolbarData = Resources.Load<InventoryData>("Data/Toolbar");
         foreach (SlotData slotData in backpack.slotList)
         {
-            Debug.Log($"±³°ü²ÛÎ»£ºItemType={slotData?.item?.type ?? ItemType.None}, SubType={slotData?.item?.subType ?? SubType.None}");
+            Debug.Log($"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ItemType={slotData?.item?.type ?? ItemType.None}, SubType={slotData?.item?.subType ?? SubType.None}");
         }
+
+        // æ·»åŠ å°å±‹çš®è‚¤åˆ°å·¥å…·æ 
+        ItemData defaultSkin = GetItemData(ItemType.Skin, SubType.Hut_Default);
+        ItemData winterSkin = GetItemData(ItemType.Skin, SubType.Hut_Winter);
+        ItemData summerSkin = GetItemData(ItemType.Skin, SubType.Hut_Summer);
+
+        if (defaultSkin != null)
+        {
+            toolbarData.slotList[0].AddItem(defaultSkin, 1); // å·¥å…·æ ç¬¬ä¸€ä¸ªæ§½ä½æ˜¾ç¤ºé»˜è®¤çš®è‚¤
+        }
+
+        if (winterSkin != null)
+        {
+            toolbarData.slotList[1].AddItem(winterSkin, 1); // å·¥å…·æ ç¬¬äºŒä¸ªæ§½ä½æ˜¾ç¤ºå†¬å­£çš®è‚¤
+        }
+
+        if (summerSkin != null)
+        {
+            toolbarData.slotList[2].AddItem(summerSkin, 1); // å·¥å…·æ ç¬¬ä¸‰ä¸ªæ§½ä½
+        }
+
+
     }
 
     // private ItemData GetItemData(ItemType type)
@@ -71,7 +93,7 @@ public class InventoryManager : MonoBehaviour
     //     }
     //     else
     //     {
-    //         Debug.LogWarning("Äã´«µİµÄtype£º" + type + "²»´æÔÚ£¬ÎŞ·¨µÃµ½ÎïÆ·ĞÅÏ¢¡£");
+    //         Debug.LogWarning("ï¿½ã´«ï¿½İµï¿½typeï¿½ï¿½" + type + "ï¿½ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½Ş·ï¿½ï¿½Ãµï¿½ï¿½ï¿½Æ·ï¿½ï¿½Ï¢ï¿½ï¿½");
     //         return null;
     //     }
     // }
@@ -109,7 +131,7 @@ public class InventoryManager : MonoBehaviour
     //         }
     //     }
 
-    //     Debug.LogWarning("ÎŞ·¨·ÅÈë²Ö¿â£¬ÄãµÄ±³°ü" + backpack + "ÒÑÂú¡£");
+    //     Debug.LogWarning("ï¿½Ş·ï¿½ï¿½ï¿½ï¿½ï¿½Ö¿â£¬ï¿½ï¿½Ä±ï¿½ï¿½ï¿½" + backpack + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
     // }
 
 
@@ -117,29 +139,30 @@ public class InventoryManager : MonoBehaviour
     {
         if (itemData == null) return;
 
-        Debug.Log($"³¢ÊÔ´æÈë±³°üµÄÎïÆ·£ºType={itemData.type}, SubType={itemData.subType}");
+        // Debug.Log($"ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ë±³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Type={itemData.type}, SubType={itemData.subType}");
+        Debug.Log($"æˆåŠŸæ·»åŠ åˆ°èƒŒåŒ…çš„ç‰©å“: Type={itemData.type}, SubType={itemData.subType}");
 
-        // ±éÀú±³°ü²ÛÎ»£¬³¢ÊÔ¶ÑµşÎïÆ·
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶Ñµï¿½ï¿½ï¿½Æ·
         foreach (SlotData slotData in backpack.slotList)
         {
             if (slotData.item == itemData && slotData.CanAddItem())
             {
-                slotData.Add(); // Ôö¼ÓÊıÁ¿
+                slotData.Add(); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 return;
             }
         }
 
-        // Èç¹ûÎŞ·¨¶Ñµş£¬Ñ°ÕÒ¿Õ²ÛÎ»´æ·Å
+        // ï¿½ï¿½ï¿½ï¿½Ş·ï¿½ï¿½Ñµï¿½ï¿½ï¿½Ñ°ï¿½Ò¿Õ²ï¿½Î»ï¿½ï¿½ï¿½
         foreach (SlotData slotData in backpack.slotList)
         {
             if (slotData.count == 0)
             {
-                slotData.AddItem(itemData); // ´æÈëĞÂÎïÆ·
+                slotData.AddItem(itemData); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·
                 return;
             }
         }
 
-        Debug.LogWarning("±³°üÒÑÂú£¬ÎŞ·¨´æ·ÅÎïÆ·£¡");
+        Debug.LogWarning("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ş·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½");
     }
 
 
