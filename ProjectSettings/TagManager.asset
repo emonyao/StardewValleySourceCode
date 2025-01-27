@@ -57,6 +57,9 @@ TagManager:
   - name: Interactable
     uniqueID: 1664118813
     locked: 0
+  - name: PlantInfo
+    uniqueID: 3899958427
+    locked: 0
   - name: Game
     uniqueID: 1624017245
     locked: 0

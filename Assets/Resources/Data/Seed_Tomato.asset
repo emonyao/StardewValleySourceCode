@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Seed_Tomato
   m_EditorClassIdentifier: 
   type: 2
+  subType: 20
   sprite: {fileID: 6925387060480257671, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
   prefab: {fileID: 4581518663160016806, guid: 54841220c4ff73145a442dd2d9cd22c0, type: 3}
   maxCount: 99
+  growthSprites:
+  - {fileID: -4146160457866344993, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
+  - {fileID: 4335470556006902050, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
+  - {fileID: -6288726357820247802, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
+  - {fileID: -5853618890739240092, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
+  totalGrowthTime: 30

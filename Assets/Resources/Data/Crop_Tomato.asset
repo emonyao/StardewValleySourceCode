@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f78f82780ef2fb42bd12c28fa6ea669, type: 3}
   m_Name: Crop_Tomato
   m_EditorClassIdentifier: 
-  type: 0
-  subType: 0
-  sprite: {fileID: 0}
-  prefab: {fileID: 0}
-  maxCount: 1
+  type: 3
+  subType: 20
+  sprite: {fileID: 801310492, guid: d0d4359115176544c81874078aba2a16, type: 3}
+  prefab: {fileID: 7283664171037972974, guid: 5dc1e2f455edfca4eb3e1da1d1f85af3, type: 3}
+  maxCount: 99
   growthSprites: []
   totalGrowthTime: 0

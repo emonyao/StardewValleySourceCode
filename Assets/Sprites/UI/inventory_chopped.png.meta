@@ -402,9 +402,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 144
-        width: 272
-        height: 176
+        y: 160
+        width: 271
+        height: 160
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2182,6 +2182,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Crop_Carrot
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69cba4092dc57e4cbd497d7656cc34d
+      internalID: 1281683329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crop_Tomato
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0ed600a831a3e4e905ce9b74191418
+      internalID: 801310492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2197,6 +2239,8 @@ TextureImporter:
       Bg_Left: -5997219673751677146
       Bg_Right: -2698461311538906979
       CloseButton: 634637129323360480
+      Crop_Carrot: 1281683329
+      Crop_Tomato: 801310492
       Slot_Dark: 1455424091562576901
       Slot_Light: -5358493649051410551
       inventory_chopped_10: -8525590819087531437

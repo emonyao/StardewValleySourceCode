@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f78f82780ef2fb42bd12c28fa6ea669, type: 3}
   m_Name: Crop_Carrot
   m_EditorClassIdentifier: 
-  type: 0
-  subType: 0
-  sprite: {fileID: 0}
-  prefab: {fileID: 0}
-  maxCount: 1
+  type: 3
+  subType: 10
+  sprite: {fileID: 1281683329, guid: d0d4359115176544c81874078aba2a16, type: 3}
+  prefab: {fileID: 2349690171866237152, guid: cd4838b2bda30eb409c284dbdc164ad2, type: 3}
+  maxCount: 99
   growthSprites: []
   totalGrowthTime: 0

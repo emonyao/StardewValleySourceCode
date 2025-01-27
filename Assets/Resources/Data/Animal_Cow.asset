@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f78f82780ef2fb42bd12c28fa6ea669, type: 3}
   m_Name: Animal_Cow
   m_EditorClassIdentifier: 
-  type: 0
-  subType: 0
-  sprite: {fileID: 0}
-  prefab: {fileID: 0}
+  type: 4
+  subType: 50
+  sprite: {fileID: -8985371607680229681, guid: 545043e9405d4c349b456758194a63b8, type: 3}
+  prefab: {fileID: 629898840691317402, guid: ceeef71b1425e9245addb10c8a1fca03, type: 3}
   maxCount: 1
-  growthSprites: []
-  totalGrowthTime: 0
+  growthSprites:
+  - {fileID: -7908913803218297032, guid: b65c6b92e7883c648bca2584110c7d42, type: 3}
+  - {fileID: -8985371607680229681, guid: 545043e9405d4c349b456758194a63b8, type: 3}
+  totalGrowthTime: 120

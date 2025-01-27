@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f78f82780ef2fb42bd12c28fa6ea669, type: 3}
   m_Name: Seed_Carrot
   m_EditorClassIdentifier: 
-  type: 1
+  type: 2
+  subType: 10
   sprite: {fileID: -5084718332513270039, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
   prefab: {fileID: 7776072713476467837, guid: 89ad872d9c2e8c14786842dca59e626f, type: 3}
   maxCount: 99
+  growthSprites:
+  - {fileID: 528207427668497956, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
+  - {fileID: -2621260439036511602, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
+  - {fileID: -8257079274519772671, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
+  - {fileID: -2104569185921875643, guid: 275b53c381bc9bd48bad16491b593a01, type: 3}
+  totalGrowthTime: 60
