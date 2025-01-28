@@ -1,0 +1,118 @@
+@startuml
+
+' 数据类
+class InventoryData {
+    + slotList : List<SlotData>
+}
+
+class SlotData {
+    + item : ItemData
+    + count : int
+    + AddItem(item: ItemData, count: int) : void
+    + Clear() : void
+}
+
+class ItemData {
+    + type : ItemType
+    + subType : SubType
+    + sprite : Sprite
+    + prefab : GameObject
+    + maxCount : int
+}
+
+class SkinData {
+    + skinName : string
+    + skinSprite : Sprite
+    + uiIcon : Sprite
+}
+
+' 管理器类
+class InventoryManager {
+    + Instance : InventoryManager
+    + backpack : InventoryData
+    + toolbarData : InventoryData
+    + AddToBackpack(item: ItemData) : void
+}
+
+class HutManager {
+    + ChangeSkin(skinData: SkinData) : void
+}
+
+class PlantManager {
+    + PlantSeed(position: Vector3, seedData: ItemData) : void
+}
+
+class AnimalManager {
+    + AddAnimal(position: Vector3, animalData: ItemData) : void
+}
+
+class TimeManager {
+    + GetCurrentTime() : DateTime
+    + AdvanceTime(hours: int) : void
+}
+
+' UI 类
+class ToolbarUI {
+    + slotuiList : List<ToolbarSlotUI>
+    + GetSelectedSlotUI() : ToolbarSlotUI
+    + UpdateUI() : void
+}
+
+class ToolbarSlotUI {
+    + slotLight : Sprite
+    + slotDark : Sprite
+    + Highlight() : void
+    + UnHighlight() : void
+}
+
+class BackpackUI {
+    + UpdateUI() : void
+}
+
+class ItemMoveHandler {
+    + OnSlotClick(slot: SlotUI) : void
+}
+
+class SlotUI {
+    + index : int
+    + data : SlotData
+    + SetData(data: SlotData) : void
+    + UpdateUI() : void
+}
+
+' 小人控制类
+class Player {
+    + speed : float
+    + anim : Animator
+    + direction : Vector2
+    + toolbarUI : ToolbarUI
+}
+
+class FollowTarget {
+    + player : Transform
+    + offset : Vector3
+    + FixedUpdate() : void
+}
+
+class ExPlayer {
+    + specialAbility : string
+    + UseAbility() : void
+}
+
+' 定义关系
+InventoryManager --> SlotData : "contains"
+InventoryManager --> ItemData : "manages"
+InventoryData --> SlotData : "contains"
+SlotData --> ItemData : "references"
+Player --> ToolbarUI : "uses"
+ToolbarUI --> ToolbarSlotUI : "contains"
+ToolbarSlotUI --> SlotData : "references"
+BackpackUI --> InventoryData : "references"
+ItemMoveHandler --> SlotUI : "interacts with"
+SlotUI --> SlotData : "references"
+HutManager --> SkinData : "uses"
+PlantManager --> ItemData : "uses"
+AnimalManager --> ItemData : "uses"
+FollowTarget --> Player : "follows"
+
+@enduml
